@@ -1,0 +1,44 @@
+/* 
+  Localizable.strings
+  RickMorty
+
+  Created by Alejandro Hernández Matías on 30/10/18.
+  Copyright © 2018 Alejandro Hernández Matías. All rights reserved.
+*/
+
+/********** Generic **********/
+
+"generic_no" = "NO";
+
+"generic_yes" = "YES";
+
+"generic_dismiss" = "SKIP";
+
+"generic_error" = "Error";
+
+"generic_accept" = "Accept";
+
+"generic_start" = "Start";
+
+"generic_cancel" = "Cancel";
+
+"generic_attention" = "Attention";
+
+"generic_and" = "and";
+
+"generic_reload" = "Reload";
+
+"generic_connection_error" = "It seems there is no Internet conection, please try again later";
+
+"generic_error_message" = "The operation could not be completed, please try again later";
+
+"generic_ask_update_message" = "There is a new version of the app. Do you want to update it?";
+
+"generic_force_update_message" = "There is a new version of the app. Is needed to update to continue";
+
+
+/********** Navigation **********/
+
+"tabs_1" = "Episodios";
+
+"tabs_2" = "Info";
