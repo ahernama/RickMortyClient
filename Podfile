@@ -14,6 +14,9 @@ def shared_pods
     pod 'Fabric', '~> 1.7.6'
     pod 'Crashlytics', '~> 3.10.1'
     
+    pod 'MaterialComponents/FlexibleHeader'
+    pod 'MaterialComponents/PageControl'
+    
     pod 'ViewAnimator'
     pod 'RealmSwift'
     pod 'ObjectMapper+Realm'

@@ -100,6 +100,15 @@ PODS:
   - GTMSessionFetcher/Core (1.2.0)
   - GTMSessionFetcher/Full (1.2.0):
     - GTMSessionFetcher/Core (= 1.2.0)
+  - MaterialComponents/FlexibleHeader (65.0.0):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/UIMetrics
+    - MDFTextAccessibility
+  - MaterialComponents/PageControl (65.0.0)
+  - MaterialComponents/private/Application (65.0.0)
+  - MaterialComponents/private/UIMetrics (65.0.0):
+    - MaterialComponents/private/Application
+  - MDFTextAccessibility (1.2.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -132,6 +141,8 @@ DEPENDENCIES:
   - Firebase/Performance
   - FirebaseAuth
   - GoogleSignIn
+  - MaterialComponents/FlexibleHeader
+  - MaterialComponents/PageControl
   - NVActivityIndicatorView
   - ObjectMapper
   - "ObjectMapper+Realm"
@@ -160,6 +171,8 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMOAuth2
     - GTMSessionFetcher
+    - MaterialComponents
+    - MDFTextAccessibility
     - nanopb
     - NVActivityIndicatorView
     - ObjectMapper
@@ -190,6 +203,8 @@ SPEC CHECKSUMS:
   GoogleUtilities: 760ccb53b7c7f40f9c02d8c241f76f841a7a6162
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
+  MaterialComponents: ea21a99bd4da688f9becf8c3e9416016343cbe32
+  MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
@@ -201,6 +216,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
   ViewAnimator: a849844cc3698620e1a562b510ed0c28aeafcdc5
 
-PODFILE CHECKSUM: f1fe62b7c8f2be96dc6d2d7c2bf03a58e308b3a6
+PODFILE CHECKSUM: 8bd52a29d1b31f96b76b864a872525b25ed7b057
 
 COCOAPODS: 1.5.3

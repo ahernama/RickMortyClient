@@ -42,15 +42,16 @@ extension MainstructureViewController: MainstructurePresenterDelegate {
         self.delegate = delegate
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: RickMortyDefines.Fonts.avenir_book_10!], for: .normal)
         
-        let episodesViewController = EpisodesViewController.instantiate()
-        let navigationEpisodes = UINavigationController(rootViewController: episodesViewController)
-        episodesViewController.tabBarItem = UITabBarItem(title: String.tabs_1, image: UIImage(named:"computer")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named:"computer"))
-        episodesViewController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -4)
+        let episodesFlexibleHeaderContainerViewController = EpisodesFlexibleHeaderContainerViewController()
+        let navigationEpisodes = UINavigationController(rootViewController: episodesFlexibleHeaderContainerViewController)
+        navigationEpisodes.isNavigationBarHidden = true
+        episodesFlexibleHeaderContainerViewController.tabBarItem = UITabBarItem(title: String.tabs_1, image: UIImage(named:"computer")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named:"computer"))
+        episodesFlexibleHeaderContainerViewController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -4)
         
         let infoViewController = InfoViewController.instantiate()
         let navigationInfo = UINavigationController(rootViewController: infoViewController)
         infoViewController.tabBarItem = UITabBarItem(title: String.tabs_2, image: UIImage(named:"user")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named:"user"))
-        episodesViewController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -4)
+        infoViewController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -4)
         
         self.viewControllers = [navigationEpisodes,navigationInfo]
         self.tabBar.tintColor = RickMortyDefines.Colors.darkGreen

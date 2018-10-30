@@ -69,6 +69,9 @@
 		AB874472218876C500F9EED8 /* logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB874470218876C500F9EED8 /* logo@3x.png */; };
 		AB874473218876C500F9EED8 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB874471218876C500F9EED8 /* logo@2x.png */; };
 		AB874476218881B900F9EED8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB874475218881B900F9EED8 /* GoogleService-Info.plist */; };
+		AB8744782188925200F9EED8 /* EpisodesFlexibleHeaderContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8744772188925200F9EED8 /* EpisodesFlexibleHeaderContainerViewController.swift */; };
+		AB87447B2188982100F9EED8 /* EpisodesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB87447A2188982100F9EED8 /* EpisodesHeaderView.swift */; };
+		AB87447D2188986100F9EED8 /* EpisodesHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB87447C2188986100F9EED8 /* EpisodesHeaderView.xib */; };
 		CC3B5702678D910AADEDD1F8 /* Pods_RickMorty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5AB489E764019EB9018F53 /* Pods_RickMorty.framework */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +162,9 @@
 		AB874470218876C500F9EED8 /* logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@3x.png"; sourceTree = "<group>"; };
 		AB874471218876C500F9EED8 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		AB874475218881B900F9EED8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AB8744772188925200F9EED8 /* EpisodesFlexibleHeaderContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesFlexibleHeaderContainerViewController.swift; sourceTree = "<group>"; };
+		AB87447A2188982100F9EED8 /* EpisodesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesHeaderView.swift; sourceTree = "<group>"; };
+		AB87447C2188986100F9EED8 /* EpisodesHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodesHeaderView.xib; sourceTree = "<group>"; };
 		BE5AB489E764019EB9018F53 /* Pods_RickMorty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickMorty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E3AF659D61F384A15E14DE /* Pods-RickMorty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickMorty.release.xcconfig"; path = "Pods/Target Support Files/Pods-RickMorty/Pods-RickMorty.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -411,6 +417,7 @@
 		AB8743DE21885CA100F9EED8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				AB8744792188980C00F9EED8 /* Views */,
 				AB8743DF21885CA100F9EED8 /* Storyboard */,
 				AB8743E021885CA100F9EED8 /* ViewControllers */,
 			);
@@ -429,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				AB87440D218861F600F9EED8 /* EpisodesViewController.swift */,
+				AB8744772188925200F9EED8 /* EpisodesFlexibleHeaderContainerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -730,6 +738,15 @@
 			path = Firebase;
 			sourceTree = "<group>";
 		};
+		AB8744792188980C00F9EED8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB87447A2188982100F9EED8 /* EpisodesHeaderView.swift */,
+				AB87447C2188986100F9EED8 /* EpisodesHeaderView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -874,6 +891,7 @@
 				AB874432218872B300F9EED8 /* Splash.storyboard in Resources */,
 				AB87445B218876BF00F9EED8 /* Icon-App-76x76@3x.png in Resources */,
 				AB87446E218876BF00F9EED8 /* iTunesArtwork@3x.png in Resources */,
+				AB87447D2188986100F9EED8 /* EpisodesHeaderView.xib in Resources */,
 				AB874462218876BF00F9EED8 /* Icon-App-20x20@2x.png in Resources */,
 				AB874454218876BF00F9EED8 /* iTunesArtwork@1x.png in Resources */,
 				AB87445C218876BF00F9EED8 /* Icon-App-72x72@1x.png in Resources */,
@@ -948,6 +966,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper+Realm/ObjectMapper_Realm.framework",
@@ -967,6 +987,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper_Realm.framework",
@@ -993,6 +1015,7 @@
 				AB8743CB21885B1500F9EED8 /* AppDelegate.swift in Sources */,
 				AB8743CC21885B1500F9EED8 /* Reach.swift in Sources */,
 				AB8743CD21885B1500F9EED8 /* RouterManager.swift in Sources */,
+				AB8744782188925200F9EED8 /* EpisodesFlexibleHeaderContainerViewController.swift in Sources */,
 				AB874434218872C800F9EED8 /* SplashViewController.swift in Sources */,
 				AB87440E218861F600F9EED8 /* EpisodesViewController.swift in Sources */,
 				AB8744122188627000F9EED8 /* InfoViewController.swift in Sources */,
@@ -1000,6 +1023,7 @@
 				AB87441A218864F100F9EED8 /* RickMortyDefines.swift in Sources */,
 				AB8743D021885B1500F9EED8 /* Better_localization_localizable.swift in Sources */,
 				AB8744142188628D00F9EED8 /* EpisodesPresenter.swift in Sources */,
+				AB87447B2188982100F9EED8 /* EpisodesHeaderView.swift in Sources */,
 				AB8743CF21885B1500F9EED8 /* Better_localization_uiviewextensions.swift in Sources */,
 				AB8744232188688100F9EED8 /* String+Localized.swift in Sources */,
 				AB8744022188607700F9EED8 /* MainstructurePresenter.swift in Sources */,
