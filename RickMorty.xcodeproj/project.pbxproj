@@ -68,6 +68,7 @@
 		AB87446E218876BF00F9EED8 /* iTunesArtwork@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB874453218876BF00F9EED8 /* iTunesArtwork@3x.png */; };
 		AB874472218876C500F9EED8 /* logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB874470218876C500F9EED8 /* logo@3x.png */; };
 		AB874473218876C500F9EED8 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB874471218876C500F9EED8 /* logo@2x.png */; };
+		AB874476218881B900F9EED8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB874475218881B900F9EED8 /* GoogleService-Info.plist */; };
 		CC3B5702678D910AADEDD1F8 /* Pods_RickMorty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5AB489E764019EB9018F53 /* Pods_RickMorty.framework */; };
 /* End PBXBuildFile section */
 
@@ -157,6 +158,7 @@
 		AB874453218876BF00F9EED8 /* iTunesArtwork@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@3x.png"; sourceTree = "<group>"; };
 		AB874470218876C500F9EED8 /* logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@3x.png"; sourceTree = "<group>"; };
 		AB874471218876C500F9EED8 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		AB874475218881B900F9EED8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BE5AB489E764019EB9018F53 /* Pods_RickMorty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickMorty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E3AF659D61F384A15E14DE /* Pods-RickMorty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickMorty.release.xcconfig"; path = "Pods/Target Support Files/Pods-RickMorty/Pods-RickMorty.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -624,6 +626,7 @@
 		AB874418218864D900F9EED8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AB874474218881A200F9EED8 /* Firebase */,
 				AB87442421886D7700F9EED8 /* Images */,
 				AB87441D2188663400F9EED8 /* Fonts */,
 				AB874420218867AF00F9EED8 /* Localizable.strings */,
@@ -717,6 +720,14 @@
 				AB874471218876C500F9EED8 /* logo@2x.png */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		AB874474218881A200F9EED8 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				AB874475218881B900F9EED8 /* GoogleService-Info.plist */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -867,6 +878,7 @@
 				AB874454218876BF00F9EED8 /* iTunesArtwork@1x.png in Resources */,
 				AB87445C218876BF00F9EED8 /* Icon-App-72x72@1x.png in Resources */,
 				AB874455218876BF00F9EED8 /* Icon-App-57x57@1x.png in Resources */,
+				AB874476218881B900F9EED8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1171,7 +1183,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ahernama.RickMorty;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahernama.RickMorty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1191,7 +1203,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ahernama.RickMorty;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahernama.RickMorty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
