@@ -17,6 +17,7 @@ def shared_pods
     pod 'MaterialComponents/FlexibleHeader'
     pod 'MaterialComponents/PageControl'
     
+    pod 'DynamicBlurView'
     pod 'ViewAnimator'
     pod 'RealmSwift'
     pod 'ObjectMapper+Realm'

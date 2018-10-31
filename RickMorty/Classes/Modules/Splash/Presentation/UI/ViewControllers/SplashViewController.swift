@@ -9,7 +9,7 @@
 import UIKit
 import NVActivityIndicatorView
 
-class SplashViewController: UIViewController {
+class SplashViewController: RickMortyViewController {
     
     fileprivate lazy var splashPresenter: SplashPresenter = SplashPresenter(delegate: self)
     @IBOutlet weak var indicatorSplash: NVActivityIndicatorView!

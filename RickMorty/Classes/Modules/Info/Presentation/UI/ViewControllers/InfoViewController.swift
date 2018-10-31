@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {
+class InfoViewController: RickMortyViewController {
     
     fileprivate lazy var infoPresenter: InfoPresenter = InfoPresenter(delegate: self)
     

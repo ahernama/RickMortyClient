@@ -33,5 +33,6 @@ class DevDefines: NSObject {
     }
     struct Delay{
         static let delayToRemoveSplash = 2.0
+        static let delayToTestPageRequest = 1.0
     }
 }

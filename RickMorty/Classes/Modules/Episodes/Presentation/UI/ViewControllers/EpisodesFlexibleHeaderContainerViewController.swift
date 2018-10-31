@@ -13,10 +13,10 @@ class EpisodesFlexibleHeaderContainerViewController: MDCFlexibleHeaderContainerV
     
     init() {
         let episodesViewController:EpisodesViewController = EpisodesViewController.instantiate()
-        
         super.init(contentViewController: episodesViewController)
         episodesViewController.headerViewController = self.headerViewController
-        episodesViewController.setupHeaderView()
+        episodesViewController.view.frame = CGRect(x: episodesViewController.view.frame.origin.x, y: episodesViewController.view.frame.origin.y, width: episodesViewController.view.frame.size.width, height: episodesViewController.view.frame.size.height)
+        episodesViewController.configueHeaderView()
     }
 
     override func viewDidLoad() {

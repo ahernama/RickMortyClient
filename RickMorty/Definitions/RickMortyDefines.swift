@@ -10,6 +10,18 @@ import UIKit
 
 class RickMortyDefines: NSObject {
     
+    struct ContentServices{
+        static let baseUrl = "https://rickandmortyapi.com"
+        
+        struct Episodes{
+            static let getEpisodes = "/api/episode/"
+            static let defaultPage = 1
+        }
+        struct Characters{
+            static let getCharacters = "/api/character/"
+        }
+    }
+    
     struct Onboarding{
         static let numSteps = 2
     }
@@ -20,6 +32,19 @@ class RickMortyDefines: NSObject {
         static let offsetInsideIndicator = 15.0
         static let heightInsideIndicator = 3.0
         static let positionYInsideIndicator = 46.0
+    }
+    
+    struct CollectionViews{
+        struct EpisodesList{
+            static let heightEpisodeCellSection:CGFloat = 165.0
+            static let heightEpisodeCell:CGFloat = 115.0
+            static let heightLoading:CGFloat = 40.0
+            
+            static let scrollToRequestNewItemsParam:CGFloat = 1.2
+            
+            static let numSections = 2
+            static let sectionLoading = 1
+        }
     }
     
     struct Colors{
@@ -59,5 +84,15 @@ class RickMortyDefines: NSObject {
         
         static let avenir_black_20 = UIFont(name: "Avenir-Black", size: 20)
         static let avenir_black_16 = UIFont(name: "Avenir-Black", size: 16)
+    }
+    
+    struct Metrics{
+        struct Common{
+            static let loadingSize:CGFloat = 40.0
+        }
+        struct EpisodesList{
+            static let headerMax:CGFloat = DevDefines.Metrics.heightScreen/3.0
+            static let headerMin:CGFloat = 62.0
+        }
     }
 }

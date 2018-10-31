@@ -42,3 +42,9 @@
 "tabs_1" = "Episodios";
 
 "tabs_2" = "Info";
+
+/********** Episodes **********/
+
+"title_episodes" = "Rick y Morty";
+
+"description_episodes" = "Descubre todas sus temporadas y episodios";

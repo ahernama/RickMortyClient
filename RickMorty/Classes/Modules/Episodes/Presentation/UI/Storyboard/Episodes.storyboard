@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +20,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5wU-Eu-68s">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="n2O-ro-Tad">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -36,14 +37,18 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="ML4-Gy-rYk" id="S9V-jn-za3"/>
+                                    <outlet property="delegate" destination="ML4-Gy-rYk" id="JnR-qm-wlx"/>
+                                </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5wU-Eu-68s" firstAttribute="trailing" secondItem="Ptq-TX-0Nc" secondAttribute="trailing" id="FG4-TK-Xs9"/>
                             <constraint firstItem="5wU-Eu-68s" firstAttribute="top" secondItem="fM9-1c-T4F" secondAttribute="top" id="NJ5-ae-r1L"/>
-                            <constraint firstItem="5wU-Eu-68s" firstAttribute="bottom" secondItem="Ptq-TX-0Nc" secondAttribute="bottom" id="nDN-Rt-xQt"/>
                             <constraint firstItem="5wU-Eu-68s" firstAttribute="leading" secondItem="Ptq-TX-0Nc" secondAttribute="leading" id="ncB-IY-14S"/>
+                            <constraint firstItem="Ptq-TX-0Nc" firstAttribute="bottom" secondItem="5wU-Eu-68s" secondAttribute="bottom" id="sty-Cv-DQl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ptq-TX-0Nc"/>
                     </view>
