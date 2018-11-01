@@ -18,9 +18,12 @@ class EpisodesManager: NSObject {
 extension EpisodesManager {
     
     func getEpisodesList(currentPage:Int, completion:@escaping ([RMEpisode]?,RickMortyError?)->Void){
-        EpisodesDataBaseProvider.sharedInstance.getEpisodesByPage(currentPage: currentPage) { (episodes, error) in
-            guard let currentEpisodes = episodes, currentEpisodes.isEmpty == false, error == nil else {
+        EpisodesDataBaseProvider.sharedInstance.getEpisodesbyPage(currentPage: currentPage) { (episodes) in
+            guard let currentEpisodes = episodes, currentEpisodes.isEmpty == false else {
                 EpisodesApiDataProvider.sharedInstance.getEpisodesByPage(currentPage: currentPage, completion: { (episodes, error) in
+                    if let episodesFromApi = episodes, episodesFromApi.count > 0 {
+                        EpisodesDataBaseProvider.sharedInstance.insertEpisodes(episodes: episodesFromApi, page: currentPage)
+                    }
                     completion(episodes,error)
                 })
                 return

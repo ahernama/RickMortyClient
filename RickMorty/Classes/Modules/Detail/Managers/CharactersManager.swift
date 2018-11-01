@@ -9,5 +9,19 @@
 import UIKit
 
 class CharactersManager: NSObject {
-
+    
+    func getCharactersList(currentIds:[Int], completion:@escaping ([RMCharacter]?,RickMortyError?)->Void){
+        CharactersDatabaseProvider.sharedInstance.getCharactersbyIds(currentIds: currentIds) { (characters) in
+            guard let currentCharacters = characters, currentCharacters.isEmpty == false else {
+                CharactersApiDataProvider.sharedInstance.getCharactersById(currentIds: currentIds, completion: { (characters, error) in
+                    if let charactersFromApi = characters, charactersFromApi.count > 0{
+                        CharactersDatabaseProvider.sharedInstance.insertCharacters(characters: charactersFromApi)
+                    }
+                    completion(characters,error)
+                })
+                return
+            }
+            completion(characters,nil)
+        }
+    }
 }

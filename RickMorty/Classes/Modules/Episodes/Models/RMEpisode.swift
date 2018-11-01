@@ -24,7 +24,7 @@ class RMEpisode: Object, Mappable {
     @objc dynamic var url: String = ""
     @objc dynamic var created: String = ""
     
-    @objc dynamic var page: Int = RickMortyDefines.ContentServices.Episodes.defaultPage
+    @objc dynamic var pageEpisode: Int = RickMortyDefines.ContentServices.Episodes.defaultPage
     
     required convenience init?(map: Map) {
         self.init()

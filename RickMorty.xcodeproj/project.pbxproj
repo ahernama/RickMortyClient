@@ -26,6 +26,8 @@
 		AB50504B218A30F700629352 /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB50504A218A30F700629352 /* Characters.storyboard */; };
 		AB50504D218A312B00629352 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB50504C218A312B00629352 /* CharactersViewController.swift */; };
 		AB50504F218A318100629352 /* CharactersFlexibleHeaderContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB50504E218A318100629352 /* CharactersFlexibleHeaderContainerViewController.swift */; };
+		AB505051218A3DE200629352 /* CharactersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB505050218A3DE200629352 /* CharactersPresenter.swift */; };
+		AB505053218B30C100629352 /* RMCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB505052218B30C100629352 /* RMCharacter.swift */; };
 		AB8743CB21885B1500F9EED8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8743C321885B1500F9EED8 /* AppDelegate.swift */; };
 		AB8743CC21885B1500F9EED8 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8743C521885B1500F9EED8 /* Reach.swift */; };
 		AB8743CD21885B1500F9EED8 /* RouterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8743C621885B1500F9EED8 /* RouterManager.swift */; };
@@ -143,6 +145,8 @@
 		AB50504A218A30F700629352 /* Characters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Characters.storyboard; sourceTree = "<group>"; };
 		AB50504C218A312B00629352 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		AB50504E218A318100629352 /* CharactersFlexibleHeaderContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersFlexibleHeaderContainerViewController.swift; sourceTree = "<group>"; };
+		AB505050218A3DE200629352 /* CharactersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersPresenter.swift; sourceTree = "<group>"; };
+		AB505052218B30C100629352 /* RMCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacter.swift; sourceTree = "<group>"; };
 		AB8743C321885B1500F9EED8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB8743C521885B1500F9EED8 /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
 		AB8743C621885B1500F9EED8 /* RouterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterManager.swift; sourceTree = "<group>"; };
@@ -355,6 +359,7 @@
 		AB50503D218A2DD700629352 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AB505052218B30C100629352 /* RMCharacter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -405,6 +410,7 @@
 		AB505043218A2DD800629352 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				AB505050218A3DE200629352 /* CharactersPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1216,6 +1222,7 @@
 				AB874430218870F800F9EED8 /* ViewWithElements.swift in Sources */,
 				AB50502B2189C75F00629352 /* EpisodeSectionCollectionViewCell.swift in Sources */,
 				AB87441A218864F100F9EED8 /* RickMortyDefines.swift in Sources */,
+				AB505051218A3DE200629352 /* CharactersPresenter.swift in Sources */,
 				AB505049218A2F8700629352 /* CharactersDatabaseProvider.swift in Sources */,
 				AB8743D021885B1500F9EED8 /* Better_localization_localizable.swift in Sources */,
 				AB8744912189214300F9EED8 /* RickMortyViewController.swift in Sources */,
@@ -1229,6 +1236,7 @@
 				AB50504D218A312B00629352 /* CharactersViewController.swift in Sources */,
 				AB87441C2188650000F9EED8 /* DevDefines.swift in Sources */,
 				AB50504F218A318100629352 /* CharactersFlexibleHeaderContainerViewController.swift in Sources */,
+				AB505053218B30C100629352 /* RMCharacter.swift in Sources */,
 				AB50502F218A0B6800629352 /* LoadingCollectionViewCell.swift in Sources */,
 				AB8743CE21885B1500F9EED8 /* Better_localization_localizableextension.swift in Sources */,
 				AB874416218862B500F9EED8 /* InfoPresenter.swift in Sources */,
