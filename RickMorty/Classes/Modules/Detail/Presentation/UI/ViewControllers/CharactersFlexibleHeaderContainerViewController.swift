@@ -10,22 +10,20 @@ import UIKit
 import MaterialComponents.MaterialFlexibleHeader
 
 class CharactersFlexibleHeaderContainerViewController: MDCFlexibleHeaderContainerViewController {
+    
+    init(episode:RMEpisode) {
+        let charactersViewController:CharactersViewController = CharactersViewController.instantiate(episode:episode)
+        super.init(contentViewController: charactersViewController)
+        charactersViewController.headerViewController = self.headerViewController
+        charactersViewController.view.frame = CGRect(x: charactersViewController.view.frame.origin.x, y: charactersViewController.view.frame.origin.y, width: charactersViewController.view.frame.size.width, height: charactersViewController.view.frame.size.height)
+        charactersViewController.configueHeaderView()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
-    */
-
 }

@@ -19,7 +19,7 @@ class CharactersApiDataProvider: NSObject {
     }
     
     func getCharactersById(currentIds:[Int], completion:@escaping ([RMCharacter]?,RickMortyError?)->Void){
-        let parametersIds:String = currentIds.compactMap({"\($0)"}).joined()
+        let parametersIds:String = currentIds.compactMap({"\($0)"}).joined(separator: ",")
         let serviceUrl = RickMortyDefines.ContentServices.baseUrl+RickMortyDefines.ContentServices.Characters.getCharacters+parametersIds
         let sessionManager = Alamofire.SessionManager.default
         sessionManager.request(serviceUrl, method: .get, parameters: nil, encoding: URLEncoding(destination: .queryString), headers: nil).responseString { (response) -> Void in

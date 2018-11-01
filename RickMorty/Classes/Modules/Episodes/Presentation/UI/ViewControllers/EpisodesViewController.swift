@@ -68,6 +68,12 @@ extension EpisodesViewController: UICollectionViewDelegate, UICollectionViewData
         return self.episodesPresenter.numSections()
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section != RickMortyDefines.CollectionViews.EpisodesList.sectionLoading {
+            self.episodesPresenter.selectedCurrentPosition(position: indexPath.row)
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell:UICollectionViewCell? = nil
         if indexPath.section == RickMortyDefines.CollectionViews.EpisodesList.sectionLoading {

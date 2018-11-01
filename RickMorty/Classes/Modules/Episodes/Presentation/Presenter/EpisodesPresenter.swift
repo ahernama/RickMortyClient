@@ -78,6 +78,12 @@ class EpisodesPresenter: NSObject {
         }
     }
     
+    func selectedCurrentPosition(position:Int){
+        if position < self.episodes.count {
+            self.transitionToEpisodeDetail(episode: self.episodes[position])
+        }
+    }
+    
     //Request information methods
     func requestNextItems(){
         if (self.fetchingMoreEpisodes == false && self.maxPageReached == false){
@@ -103,20 +109,18 @@ class EpisodesPresenter: NSObject {
                 self.delegate?.loadCollectionLoading()
                 return
             }
-            if let currentEpisodes = episodes {
-                var paths = [IndexPath]()
-                for item in 0..<currentEpisodes.count {
-                    let indexPath = IndexPath(item: item + self.episodes.count, section: 0)
-                    paths.append(indexPath)
-                }
-                if self.currentPageRequested != RickMortyDefines.ContentServices.Episodes.defaultPage {
-                    self.episodes.append(contentsOf: currentEpisodes)
-                }else{
-                    self.episodes = currentEpisodes
-                }
-                self.delegate?.loadEpisodes(paths, needClear: self.currentPageRequested == RickMortyDefines.ContentServices.Episodes.defaultPage)
-                self.currentPageRequested += 1
+            var paths = [IndexPath]()
+            for item in 0..<currentEpisodes.count {
+                let indexPath = IndexPath(item: item + self.episodes.count, section: 0)
+                paths.append(indexPath)
             }
+            if self.currentPageRequested != RickMortyDefines.ContentServices.Episodes.defaultPage {
+                self.episodes.append(contentsOf: currentEpisodes)
+            }else{
+                self.episodes = currentEpisodes
+            }
+            self.delegate?.loadEpisodes(paths, needClear: self.currentPageRequested == RickMortyDefines.ContentServices.Episodes.defaultPage)
+            self.currentPageRequested += 1
             self.fetchingMoreEpisodes = false
             self.delegate?.loadCollectionLoading()
         }
@@ -146,5 +150,17 @@ class EpisodesPresenter: NSObject {
             }
         }
         return 0
+    }
+}
+
+//
+// MARK: - Transition Methods
+//
+
+extension EpisodesPresenter{
+    func transitionToEpisodeDetail(episode:RMEpisode){
+        let charactersFlexibleHeaderContainerViewController:CharactersFlexibleHeaderContainerViewController = CharactersFlexibleHeaderContainerViewController(episode: episode)
+        RouterManager.shared.visibleViewController?.present(charactersFlexibleHeaderContainerViewController, animated: true, completion: {
+        })
     }
 }

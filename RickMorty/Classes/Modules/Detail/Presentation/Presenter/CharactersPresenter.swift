@@ -15,11 +15,19 @@ protocol CharactersPresenterDelegate: NSObjectProtocol {
     
     func showLoadingIndicator()
     func hideLoadingIndicator()
+    
+    func loadCharacters()
 }
 
 class CharactersPresenter: NSObject {
     
     private weak var delegate: CharactersPresenterDelegate?
+    var episode:RMEpisode!
+    private lazy var charactersManager: CharactersManager = CharactersManager()
+
+    
+    private var characters:[RMCharacter] = []
+    private var filterCharacters:[RMCharacter] = []
     
     init(delegate: CharactersPresenterDelegate) {
         self.delegate = delegate
@@ -37,8 +45,45 @@ class CharactersPresenter: NSObject {
         self.delegate?.sizeHeaderView()
     }
     
+    //collection view pagging methods
+    func numCharacters(currentSection:Int) -> Int {
+        return self.filterCharacters.count
+    }
+    
+    func numSections() -> Int {
+        return RickMortyDefines.CollectionViews.CharactersList.numSections
+    }
+    
+    func currentCharacter(position:Int) -> RMCharacter? {
+        if position < self.filterCharacters.count {
+            return self.filterCharacters[position]
+        }else{
+            return nil
+        }
+    }
+    
     //Request information methods
     func requestCharacters(){
-        
+        charactersManager.getCharactersList(currentIds: getrCharactersIdByEpisode(episode: self.episode)) { (characters, error) in
+            self.delegate?.hideLoadingIndicator()
+            
+            guard let currentCharacters = characters, currentCharacters.isEmpty == false, error == nil else{
+                //Show Error and retry
+                return
+            }
+            self.characters = currentCharacters
+            self.filterCharacters = self.characters
+            self.delegate?.loadCharacters()
+        }
+    }
+    
+    func getrCharactersIdByEpisode(episode:RMEpisode)->[Int]{
+        var currentIds:[Int] = []
+        for character in episode.characters {
+            if let idCharacter = Int(character.replacingOccurrences(of: RickMortyDefines.ContentServices.baseUrl+RickMortyDefines.ContentServices.Characters.getCharacters, with: "")) {
+                currentIds.append(idCharacter)
+            }
+        }
+        return currentIds
     }
 }

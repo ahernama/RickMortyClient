@@ -45,6 +45,11 @@ class RickMortyDefines: NSObject {
             static let numSections = 2
             static let sectionLoading = 1
         }
+        
+        struct CharactersList{
+            static let numSections = 1
+            static let heightCharacters:CGFloat = 200.0
+        }
     }
     
     struct Colors{
@@ -93,6 +98,10 @@ class RickMortyDefines: NSObject {
         struct EpisodesList{
             static let headerMax:CGFloat = DevDefines.Metrics.heightScreen/3.0
             static let headerMin:CGFloat = 62.0
+        }
+        struct CharacterList{
+            static let headerMax:CGFloat = DevDefines.Metrics.heightScreen/3.0
+            static let headerMin:CGFloat = 80.0
         }
     }
 }
