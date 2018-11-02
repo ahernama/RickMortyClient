@@ -11,7 +11,7 @@ import RealmSwift
 
 class EpisodesDataBaseProvider: NSObject {
     
-    static let sharedInstance = EpisodesApiDataProvider()
+    static let sharedInstance = EpisodesDataBaseProvider()
     
     override init() {
         super.init()
@@ -20,18 +20,22 @@ class EpisodesDataBaseProvider: NSObject {
     func getEpisodesbyPage(currentPage:Int,completion:@escaping ([RMEpisode]?)->Void){
         var episodes:[RMEpisode] = []
         let realm = try! Realm()
-        let results = realm.objects(RMEpisode.self).filter("idEpisode == '\(currentPage)'")
+        let results = realm.objects(RMEpisode.self).filter("pageEpisode == \(currentPage)")
         for currentResult in results {
             episodes.append(currentResult)
         }
         completion(episodes)
     }
     
-    func insertEpisodes(episodes:[RMEpisode]?){
+    func insertEpisodes(episodes:[RMEpisode]?, page:Int){
         if let currentEpisodes = episodes {
+            let episodesWithPage = currentEpisodes.map { (episode) -> RMEpisode in
+                episode.pageEpisode = page
+                return episode
+            }
             let realm = try! Realm()
             try! realm.write {
-                realm.add(currentEpisodes, update: true)
+                realm.add(episodesWithPage, update: true)
             }
         }
     }

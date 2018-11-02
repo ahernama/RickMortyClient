@@ -15,10 +15,14 @@ class RickMortyDefines: NSObject {
         
         struct Episodes{
             static let getEpisodes = "/api/episode/"
-            static let defaultPage = 1
+            static let defaultPage:Int = 1
         }
         struct Characters{
             static let getCharacters = "/api/character/"
+            
+            static let alive = "Alive"
+            static let death = "Dead"
+            static let unknown = "unknown"
         }
     }
     
@@ -44,6 +48,11 @@ class RickMortyDefines: NSObject {
             
             static let numSections = 2
             static let sectionLoading = 1
+        }
+        
+        struct CharactersList{
+            static let numSections = 1
+            static let heightCharacters:CGFloat = 200.0
         }
     }
     
@@ -93,6 +102,10 @@ class RickMortyDefines: NSObject {
         struct EpisodesList{
             static let headerMax:CGFloat = DevDefines.Metrics.heightScreen/3.0
             static let headerMin:CGFloat = 62.0
+        }
+        struct CharacterList{
+            static let headerMax:CGFloat = DevDefines.Metrics.heightScreen/3.0
+            static let headerMin:CGFloat = 80.0
         }
     }
 }

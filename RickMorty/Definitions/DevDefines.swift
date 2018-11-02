@@ -10,7 +10,7 @@ import UIKit
 
 class DevDefines: NSObject {
     
-    static let datbaseVersion = 1.0
+    static let datbaseVersion = 2.0
     
     struct Services{
         static let correct_code_http = 200
