@@ -14,13 +14,15 @@ def shared_pods
     pod 'Fabric', '~> 1.7.6'
     pod 'Crashlytics', '~> 3.10.1'
     
-    pod 'Material'
+    pod 'MaterialComponents/FlexibleHeader'
+    pod 'MaterialComponents/PageControl'
     
+    pod 'DynamicBlurView'
     pod 'ViewAnimator'
     pod 'RealmSwift'
     pod 'ObjectMapper+Realm'
 	pod 'SwiftyJSON'
-    pod 'ObjectMapper', '~> 3.1'
+    pod 'ObjectMapper'
     pod 'SwiftyUserDefaults'
 
     pod 'NVActivityIndicatorView'

@@ -1,0 +1,74 @@
+/* 
+  Localizable.strings
+  RickMorty
+
+  Created by Alejandro Hernández Matías on 30/10/18.
+  Copyright © 2018 Alejandro Hernández Matías. All rights reserved.
+*/
+
+/********** Generic **********/
+
+"generic_no" = "NO";
+
+"generic_yes" = "YES";
+
+"generic_dismiss" = "SKIP";
+
+"generic_error" = "Error";
+
+"generic_accept" = "Accept";
+
+"generic_start" = "Start";
+
+"generic_cancel" = "Cancel";
+
+"generic_attention" = "Attention";
+
+"generic_and" = "and";
+
+"generic_reload" = "Reload";
+
+"generic_connection_error" = "It seems there is no Internet conection, please try again later";
+
+"generic_error_message" = "The operation could not be completed, please try again later";
+
+"generic_ask_update_message" = "There is a new version of the app. Do you want to update it?";
+
+"generic_force_update_message" = "There is a new version of the app. Is needed to update to continue";
+
+
+/********** Navigation **********/
+
+"tabs_1" = "Episodios";
+
+"tabs_2" = "Info";
+
+/********** Episodes **********/
+
+"title_episodes" = "Rick y Morty";
+
+"description_episodes" = "Descubre todas sus temporadas y episodios";
+
+"episodes_season" = "Temporada";
+
+"episodes_characters" = "Personajes";
+
+/********** Detail **********/
+
+"filter_all" = "Todos";
+
+"filter_alive" = "Vivos";
+
+"filter_death" = "Muertos";
+
+"filter_unknown" = "N/S";
+
+/********** Info **********/
+
+"info_title" = "Guía de Rick y Morty 1.0";
+
+"info_desc" = "Esta aplicación ha sido desarrollada como plantilla para una arquitectura MVP, en el que podrás encontrar listados con carga paginada, uso de Realm para la persistencia de información remota y filtrados de contenidos. Si tienes cualquier duda sobre el proyecto puedes enviarme un correo, así como visitar el API de Rick y Morty del que se nutre este ejemplo.";
+
+"info_button_1" = "Contactar";
+
+"info_button_2" = "Visitar Rick y Morty";
