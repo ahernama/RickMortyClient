@@ -17,6 +17,11 @@ class EpisodesDataBaseProvider: NSObject {
         super.init()
     }
     
+    //
+    // Requesting episodes per page in DB in the same way as in remote,
+    // This allows that if new episodes are published we
+    // can request the first ones in bd and the new ones to the api
+    
     func getEpisodesbyPage(currentPage:Int,completion:@escaping ([RMEpisode]?)->Void){
         var episodes:[RMEpisode] = []
         let realm = try! Realm()
@@ -27,6 +32,7 @@ class EpisodesDataBaseProvider: NSObject {
         completion(episodes)
     }
     
+     // Once we recover from the API the episodes, they are stored in Database
     func insertEpisodes(episodes:[RMEpisode]?, page:Int){
         if let currentEpisodes = episodes {
             let episodesWithPage = currentEpisodes.map { (episode) -> RMEpisode in

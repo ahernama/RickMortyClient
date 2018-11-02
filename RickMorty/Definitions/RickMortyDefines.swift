@@ -16,6 +16,7 @@ class RickMortyDefines: NSObject {
         struct Episodes{
             static let getEpisodes = "/api/episode/"
             static let defaultPage:Int = 1
+            static let separatorEpisodes:Character = "E"
         }
         struct Characters{
             static let getCharacters = "/api/character/"

@@ -75,6 +75,8 @@ extension EpisodesViewController: UICollectionViewDelegate, UICollectionViewData
         return cell!
     }
     
+    // Need to give sice to cells (no dynamic size),
+    // there is a bug in uicollectionview with dynamic size and insertItems compatibility
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == RickMortyDefines.CollectionViews.EpisodesList.sectionLoading {
             return CGSize(width: DevDefines.Metrics.widhtScreen, height: RickMortyDefines.CollectionViews.EpisodesList.heightLoading)
@@ -93,12 +95,14 @@ extension EpisodesViewController: UICollectionViewDelegate, UICollectionViewData
         let scrollOffsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         
+        /* Check if we need to change from expanded to collapsed navbar */
         var opacity: CGFloat = 1.0
         if scrollOffsetY > -(RickMortyDefines.Metrics.EpisodesList.headerMax/2.0) {
             opacity = 0
         }
         self.headerContentView.configureWithOpacity(opacity: opacity)
         
+        /* If we reach the end of the scroll, need to request new page of episodes*/
         if contentHeight > 0 && (scrollOffsetY > contentHeight - (self.collectionView.frame.height * RickMortyDefines.CollectionViews.EpisodesList.scrollToRequestNewItemsParam)) {
             self.episodesPresenter.requestNextItems()
         }
@@ -113,7 +117,7 @@ extension EpisodesViewController: UICollectionViewDelegate, UICollectionViewData
 // EpisodesPresenterDelegate methods.
 extension EpisodesViewController: EpisodesPresenterDelegate {
     
-    // Flexible headerview configuration.
+    // Flexible headerview methods.
     func configueHeaderView() {
         self.loadHeaderView()
         
@@ -135,7 +139,6 @@ extension EpisodesViewController: EpisodesPresenterDelegate {
         }
     }
     
-    // Header View methods.
     func sizeHeaderView() {
         let headerView = headerViewController.headerView
         let bounds = UIScreen.main.bounds
@@ -177,6 +180,7 @@ extension EpisodesViewController: EpisodesPresenterDelegate {
         }
     }
     
+    // Need to check if loading cell is necessary
     func loadCollectionLoading(){
         self.collectionView.reloadSections(IndexSet(integer: 1))
     }

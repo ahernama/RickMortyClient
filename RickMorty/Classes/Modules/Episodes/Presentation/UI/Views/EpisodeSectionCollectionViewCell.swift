@@ -18,6 +18,6 @@ class EpisodeSectionCollectionViewCell: EpisodeCollectionViewCell {
     
     func configureWithEpisode(episode:RMEpisode, numSeason:Int){
         super.configureWithEpisode(episode: episode)
-        self.seasonName.text = "Temporada \(numSeason)"
+        self.seasonName.text = "\(String.episodes_season) \(numSeason)"
     }
 }

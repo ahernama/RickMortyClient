@@ -59,9 +59,9 @@ extension CharactersViewController : UITableViewDelegate, UITableViewDataSource 
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.headerViewController.scrollViewDidScroll(scrollView)
-        
         let scrollOffsetY = scrollView.contentOffset.y
         
+        /* Check if we need to change from expanded to collapsed navbar */
         var opacity: CGFloat = 1.0
         if scrollOffsetY > -(RickMortyDefines.Metrics.CharacterList.headerMax/2.0) {
             opacity = 0
@@ -96,12 +96,6 @@ extension CharactersViewController : CharactersPresenterDelegate {
         }
     }
     
-    func configureTableView() {
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = RickMortyDefines.CollectionViews.CharactersList.heightCharacters
-        self.tableView.register(UINib(nibName: "CharactersTableViewCell", bundle: nil), forCellReuseIdentifier: "charactersTableViewCell")
-    }
-    
     func configureHeaderWithEpisode(episode:RMEpisode){
         self.headerContentView.configureWithEpisode(episode: episode)
     }
@@ -122,6 +116,14 @@ extension CharactersViewController : CharactersPresenterDelegate {
 
     }
     
+    // Tableview configuration.
+    func configureTableView() {
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = RickMortyDefines.CollectionViews.CharactersList.heightCharacters
+        self.tableView.register(UINib(nibName: "CharactersTableViewCell", bundle: nil), forCellReuseIdentifier: "charactersTableViewCell")
+    }
+    
+    // Loading methods.
     func showLoadingIndicator() {
         self.showLoadingView()
     }
@@ -131,11 +133,13 @@ extension CharactersViewController : CharactersPresenterDelegate {
         }
     }
     
+    // Load data methods.
     func loadCharacters() {
         self.tableView.reloadData()
     }
 }
 
+// Headerview delegate methods.
 extension CharactersViewController : CharactersHeaderViewDelegate {
     func backAction() {
         self.charactersPresenter.backAction()

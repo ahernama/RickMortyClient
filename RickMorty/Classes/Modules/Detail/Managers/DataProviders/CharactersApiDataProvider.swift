@@ -18,6 +18,7 @@ class CharactersApiDataProvider: NSObject {
         super.init()
     }
     
+    // Using the Ids from the characters array in episode model, we create the request to the Api
     func getCharactersById(currentIds:[Int], completion:@escaping ([RMCharacter]?,RickMortyError?)->Void){
         let parametersIds:String = currentIds.compactMap({"\($0)"}).joined(separator: ",")
         let serviceUrl = RickMortyDefines.ContentServices.baseUrl+RickMortyDefines.ContentServices.Characters.getCharacters+parametersIds
@@ -25,6 +26,7 @@ class CharactersApiDataProvider: NSObject {
         sessionManager.request(serviceUrl, method: .get, parameters: nil, encoding: URLEncoding(destination: .queryString), headers: nil).responseString { (response) -> Void in
             
             guard response.response != nil, response.result.isSuccess, let value = response.result.value else {
+                /* error handling */
                 let currentStatus = Reach().connectionStatus()
                 switch currentStatus {
                 case .unknown, .offline:

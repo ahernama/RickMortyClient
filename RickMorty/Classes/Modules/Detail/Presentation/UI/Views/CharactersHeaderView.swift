@@ -44,6 +44,7 @@ class CharactersHeaderView: UIView {
         self.labelTitleCollapsed.text = episode.nameEpisode
     }
     
+    /* get the status selected to filter the table content */
     func configureWithStatus(status:[String]){
         segmented.alpha = 1.0
         segmented.removeAllSegments()

@@ -26,7 +26,7 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
     
     func configureWithEpisode(episode:RMEpisode){
         self.titleEpisode.text = episode.nameEpisode
-        self.labelCharacters.text = "\(episode.characters.count) personajes"
+        self.labelCharacters.text = "\(episode.characters.count) \(String.episodes_characters)"
         
         if let currentPosition = getNumepisodeInSeadon(episode: episode.episode){
             self.positionEpisode.text = "\(currentPosition)"
@@ -34,7 +34,7 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
     }
     
     func getNumepisodeInSeadon(episode:String) -> Int?{
-        let parts = episode.split(separator: "E")
+        let parts = episode.split(separator: RickMortyDefines.ContentServices.Episodes.separatorEpisodes)
         if parts.count > 1 {
             return Int(parts[1])
         }

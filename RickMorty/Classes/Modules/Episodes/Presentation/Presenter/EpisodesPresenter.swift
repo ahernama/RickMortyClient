@@ -105,7 +105,7 @@ class EpisodesPresenter: NSObject {
                 if error == RickMortyError.noPageAllowed{
                     self.maxPageReached = true
                 }else{
-                    //Show Error and retry
+                    //TODO: Show Error and retry
                 }
                 self.fetchingMoreEpisodes = false
                 self.delegate?.loadCollectionLoading()
@@ -119,11 +119,16 @@ class EpisodesPresenter: NSObject {
             if self.currentPageRequested != RickMortyDefines.ContentServices.Episodes.defaultPage {
                 self.episodes.append(contentsOf: currentEpisodes)
             }else{
+                /* It's the first page requested */
                 self.episodes = currentEpisodes
             }
             self.delegate?.loadEpisodes(paths, needClear: self.currentPageRequested == RickMortyDefines.ContentServices.Episodes.defaultPage)
+            
+            /* Need to increment pagerequested to be ready for the next time  */
             self.currentPageRequested += 1
             self.fetchingMoreEpisodes = false
+            
+            /* Check the loading cell in collectionview */
             self.delegate?.loadCollectionLoading()
         }
     }

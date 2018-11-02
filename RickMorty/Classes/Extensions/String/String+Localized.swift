@@ -24,6 +24,10 @@ extension String {
     static let generic_cancel = NSLocalizedString("generic_cancel")
     static let generic_and = NSLocalizedString("generic_and")
     
+    //Episodes Screen
+    static let episodes_season = NSLocalizedString("episodes_season")
+    static let episodes_characters = NSLocalizedString("episodes_characters")
+    
     //Detail Screen
     static let filter_all = NSLocalizedString("filter_all")
     static let filter_death = NSLocalizedString("filter_death")

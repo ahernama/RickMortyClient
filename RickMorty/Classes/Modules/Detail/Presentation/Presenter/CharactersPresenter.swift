@@ -50,7 +50,7 @@ class CharactersPresenter: NSObject {
         self.delegate?.configureHeaderWithEpisode(episode: self.episode)
     }
     
-    //collection view pagging methods
+    //tableview datasource methods
     func numCharacters(currentSection:Int) -> Int {
         return self.filterCharacters.count
     }
@@ -95,7 +95,6 @@ class CharactersPresenter: NSObject {
     }
     
     //Filter methods
-    
     func filterByStatus(currentStatus:String){
         if currentStatus == String.filter_all {
             self.filterCharacters = self.characters

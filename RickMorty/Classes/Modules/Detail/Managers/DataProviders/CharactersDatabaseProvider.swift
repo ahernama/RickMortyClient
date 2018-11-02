@@ -17,6 +17,7 @@ class CharactersDatabaseProvider: NSObject {
         super.init()
     }
     
+    // We need to check if all the characters needed are in DB
     func getCharactersbyIds(currentIds:[Int],completion:@escaping ([RMCharacter]?)->Void){
         var characters:[RMCharacter] = []
         let realm = try! Realm()
@@ -28,6 +29,7 @@ class CharactersDatabaseProvider: NSObject {
         completion(characters)
     }
     
+    // Once we recover from the API the characters, they are stored in Database
     func insertCharacters(characters:[RMCharacter]?){
         if let currentCharacters = characters {
             let realm = try! Realm()

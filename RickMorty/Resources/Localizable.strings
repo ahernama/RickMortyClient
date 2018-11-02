@@ -49,6 +49,10 @@
 
 "description_episodes" = "Descubre todas sus temporadas y episodios";
 
+"episodes_season" = "Temporada";
+
+"episodes_characters" = "Personajes";
+
 /********** Detail **********/
 
 "filter_all" = "Todos";

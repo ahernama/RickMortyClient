@@ -18,14 +18,20 @@ class EpisodesApiDataProvider: NSObject {
         super.init()
     }
     
+    //
+    // Requesting episodes by page
+    //
     func getEpisodesByPage(currentPage:Int?, completion:@escaping ([RMEpisode]?,RickMortyError?)->Void){
 
         let serviceUrl = RickMortyDefines.ContentServices.baseUrl+RickMortyDefines.ContentServices.Episodes.getEpisodes
         let sessionManager = Alamofire.SessionManager.default
         let parameters:Parameters = ["page":currentPage ?? RickMortyDefines.ContentServices.Episodes.defaultPage]
+        /* Get request with only one parameter with the page to be requested */
         sessionManager.request(serviceUrl, method: .get, parameters: parameters, encoding: URLEncoding(destination: .queryString), headers: nil).responseString { (response) -> Void in
             
             guard response.response != nil, response.result.isSuccess, let value = response.result.value else {
+                
+                /* error handling */
                 let currentStatus = Reach().connectionStatus()
                 switch currentStatus {
                 case .unknown, .offline:
@@ -38,6 +44,7 @@ class EpisodesApiDataProvider: NSObject {
             }
             let rMEpisodeResponse = Mapper<RMEpisodeResponse>().map(JSONString: value)
             guard rMEpisodeResponse != nil, rMEpisodeResponse?.results != nil else{
+                /* good response but no episodes, this page is the last one */
                 completion(nil,RickMortyError.noPageAllowed)
                 return
             }
