@@ -49,6 +49,7 @@ extension MainstructureViewController: MainstructurePresenterDelegate {
         episodesFlexibleHeaderContainerViewController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -4)
         
         let infoViewController = InfoViewController.instantiate()
+        infoViewController.title = String.info_title
         let navigationInfo = UINavigationController(rootViewController: infoViewController)
         infoViewController.tabBarItem = UITabBarItem(title: String.tabs_2, image: UIImage(named:"user")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named:"user"))
         infoViewController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -4)

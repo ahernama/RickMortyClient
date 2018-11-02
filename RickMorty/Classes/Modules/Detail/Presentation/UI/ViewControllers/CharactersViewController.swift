@@ -9,10 +9,16 @@
 import UIKit
 import MaterialComponents.MaterialFlexibleHeader
 
+protocol CharactersViewControllerDelegate: NSObjectProtocol {
+    func changeStatusBarColor(needWhite:Bool)
+}
+
 class CharactersViewController: RickMortyViewController {
     
     var headerViewController: MDCFlexibleHeaderViewController!
     fileprivate var headerContentView:CharactersHeaderView!
+    
+    weak var delegate:CharactersViewControllerDelegate?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -60,6 +66,7 @@ extension CharactersViewController : UITableViewDelegate, UITableViewDataSource 
         if scrollOffsetY > -(RickMortyDefines.Metrics.CharacterList.headerMax/2.0) {
             opacity = 0
         }
+        self.delegate?.changeStatusBarColor(needWhite: opacity==0)
         self.headerContentView.configureWithOpacity(opacity: opacity)
     }
 }

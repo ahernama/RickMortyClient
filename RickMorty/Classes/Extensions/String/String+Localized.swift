@@ -30,4 +30,6 @@ extension String {
     static let filter_alive = NSLocalizedString("filter_alive")
     static let filter_unknown = NSLocalizedString("filter_unknown")
     
+    //Info Screen
+    static let info_title = NSLocalizedString("info_title")
 }

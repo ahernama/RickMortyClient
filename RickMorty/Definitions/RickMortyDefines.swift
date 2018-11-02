@@ -24,10 +24,8 @@ class RickMortyDefines: NSObject {
             static let death = "Dead"
             static let unknown = "unknown"
         }
-    }
-    
-    struct Onboarding{
-        static let numSteps = 2
+        
+        static let contactMail = "alex@4andgo.com"
     }
     
     struct Tabbar{
@@ -101,7 +99,7 @@ class RickMortyDefines: NSObject {
         }
         struct EpisodesList{
             static let headerMax:CGFloat = DevDefines.Metrics.heightScreen/3.0
-            static let headerMin:CGFloat = 62.0
+            static let headerMin:CGFloat = 54.0
         }
         struct CharacterList{
             static let headerMax:CGFloat = DevDefines.Metrics.heightScreen/3.0

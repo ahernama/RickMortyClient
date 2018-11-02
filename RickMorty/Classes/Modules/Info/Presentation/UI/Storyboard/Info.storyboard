@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,13 +17,70 @@
                     <view key="view" contentMode="scaleToFill" id="iIM-2f-xkA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="@info_desc" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sY-3C-PFc">
+                                <rect key="frame" x="20" y="70" width="335" height="25"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJQ-4f-pWn">
+                                <rect key="frame" x="20" y="120" width="335" height="55"/>
+                                <color key="backgroundColor" red="0.1960784314" green="0.52156862749999999" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="g4Y-DW-wdG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="@info_button_1">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="contactButtonAction:" destination="vkk-L2-0c4" eventType="touchUpInside" id="tlw-1x-GCM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0B-O1-6r1">
+                                <rect key="frame" x="20" y="190" width="335" height="55"/>
+                                <color key="backgroundColor" red="0.1960784314" green="0.52156862749999999" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="9la-CL-YJl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="@info_button_2">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="apiButtonAction:" destination="vkk-L2-0c4" eventType="touchUpInside" id="yb1-vd-2bF"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HJQ-4f-pWn" firstAttribute="top" secondItem="9sY-3C-PFc" secondAttribute="bottom" constant="25" id="46G-UH-H1I"/>
+                            <constraint firstItem="9sY-3C-PFc" firstAttribute="leading" secondItem="Ddr-WE-9A5" secondAttribute="leading" constant="20" id="50q-jy-Hz0"/>
+                            <constraint firstItem="Ddr-WE-9A5" firstAttribute="trailing" secondItem="F0B-O1-6r1" secondAttribute="trailing" constant="20" id="HWT-ue-0sL"/>
+                            <constraint firstItem="HJQ-4f-pWn" firstAttribute="leading" secondItem="Ddr-WE-9A5" secondAttribute="leading" constant="20" id="JGJ-km-bdz"/>
+                            <constraint firstItem="9sY-3C-PFc" firstAttribute="top" secondItem="Ddr-WE-9A5" secondAttribute="top" constant="50" id="KvC-wH-255"/>
+                            <constraint firstItem="Ddr-WE-9A5" firstAttribute="trailing" secondItem="HJQ-4f-pWn" secondAttribute="trailing" constant="20" id="SYn-He-bjS"/>
+                            <constraint firstItem="F0B-O1-6r1" firstAttribute="leading" secondItem="Ddr-WE-9A5" secondAttribute="leading" constant="20" id="XYz-2y-2vA"/>
+                            <constraint firstItem="F0B-O1-6r1" firstAttribute="top" secondItem="HJQ-4f-pWn" secondAttribute="bottom" constant="15" id="fXV-76-f57"/>
+                            <constraint firstItem="Ddr-WE-9A5" firstAttribute="trailing" secondItem="9sY-3C-PFc" secondAttribute="trailing" constant="20" id="woQ-DF-j1I"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ddr-WE-9A5"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jr3-4C-Cmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="105" y="62"/>
+            <point key="canvasLocation" x="104.8" y="61.619190404797607"/>
         </scene>
     </scenes>
 </document>

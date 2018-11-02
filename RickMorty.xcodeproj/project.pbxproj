@@ -754,25 +754,9 @@
 		AB8744032188617600F9EED8 /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				AB8744042188619100F9EED8 /* Managers */,
-				AB8744052188619100F9EED8 /* Models */,
 				AB8744062188619100F9EED8 /* Presentation */,
 			);
 			path = Info;
-			sourceTree = "<group>";
-		};
-		AB8744042188619100F9EED8 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
-		AB8744052188619100F9EED8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		AB8744062188619100F9EED8 /* Presentation */ = {

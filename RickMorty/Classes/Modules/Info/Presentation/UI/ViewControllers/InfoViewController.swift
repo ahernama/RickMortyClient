@@ -20,8 +20,15 @@ class InfoViewController: RickMortyViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.infoPresenter.viewDidLoad()
+    }
+    
+    @IBAction func contactButtonAction(_ sender: Any) {
+        self.infoPresenter.contactAction()
+    }
+    
+    @IBAction func apiButtonAction(_ sender: Any) {
+        self.infoPresenter.apiAction()
     }
 }
 

@@ -18,4 +18,17 @@ class InfoPresenter: NSObject {
     init(delegate: InfoPresenterDelegate) {
         self.delegate = delegate
     }
+    
+    func viewDidLoad(){
+    }
+    
+    func contactAction(){
+        guard let url = URL(string: "mailto:\(RickMortyDefines.ContentServices.contactMail)")  else { return }
+        UIApplication.shared.open(url)
+    }
+    
+    func apiAction(){
+        guard let url = URL(string: RickMortyDefines.ContentServices.baseUrl) else { return }
+        UIApplication.shared.open(url)
+    }
 }
