@@ -12,6 +12,7 @@ protocol EpisodesPresenterDelegate: NSObjectProtocol {
     func configureCollectionView()
     
     func sizeHeaderView()
+    func configueHeaderView()
     
     func showLoadingIndicator()
     func hideLoadingIndicator()
@@ -39,6 +40,7 @@ class EpisodesPresenter: NSObject {
     //Life cycle methods
     func viewDidLoad(){
         self.delegate?.configureCollectionView()
+        self.delegate?.configueHeaderView()
         
         self.delegate?.showLoadingIndicator()
         self.requestEpisodes()

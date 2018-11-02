@@ -34,28 +34,6 @@ class EpisodesViewController: RickMortyViewController {
         self.episodesPresenter.viewWillAppear()
         collectionView?.collectionViewLayout.invalidateLayout()
     }
-    
-    // Flexible headerview configuration.
-    func configueHeaderView() {
-        self.loadHeaderView()
-        
-        let headerView = headerViewController.headerView
-        headerView.trackingScrollView = self.collectionView
-        headerView.maximumHeight = RickMortyDefines.Metrics.EpisodesList.headerMax
-        headerView.minimumHeight = RickMortyDefines.Metrics.EpisodesList.headerMin
-        headerView.minMaxHeightIncludesSafeArea = false
-        headerView.backgroundColor = UIColor.white
-        headerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        headerContentView.frame = (headerView.bounds)
-        headerContentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        headerView.addSubview(headerContentView)
-    }
-    
-    func loadHeaderView() {
-        if let views = Bundle.main.loadNibNamed("EpisodesHeaderView", owner: self, options: nil) as? [EpisodesHeaderView], views.count > 0, let currentView = views.first{
-            self.headerContentView = currentView
-        }
-    }
 }
 
 extension EpisodesViewController: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
@@ -134,6 +112,28 @@ extension EpisodesViewController: UICollectionViewDelegate, UICollectionViewData
 
 // EpisodesPresenterDelegate methods.
 extension EpisodesViewController: EpisodesPresenterDelegate {
+    
+    // Flexible headerview configuration.
+    func configueHeaderView() {
+        self.loadHeaderView()
+        
+        let headerView = headerViewController.headerView
+        headerView.trackingScrollView = self.collectionView
+        headerView.maximumHeight = RickMortyDefines.Metrics.EpisodesList.headerMax
+        headerView.minimumHeight = RickMortyDefines.Metrics.EpisodesList.headerMin
+        headerView.minMaxHeightIncludesSafeArea = false
+        headerView.backgroundColor = UIColor.white
+        headerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        headerContentView.frame = (headerView.bounds)
+        headerContentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        headerView.addSubview(headerContentView)
+    }
+    
+    func loadHeaderView() {
+        if let views = Bundle.main.loadNibNamed("EpisodesHeaderView", owner: self, options: nil) as? [EpisodesHeaderView], views.count > 0, let currentView = views.first{
+            self.headerContentView = currentView
+        }
+    }
     
     // Header View methods.
     func sizeHeaderView() {

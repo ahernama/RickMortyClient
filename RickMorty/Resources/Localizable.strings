@@ -48,3 +48,13 @@
 "title_episodes" = "Rick y Morty";
 
 "description_episodes" = "Descubre todas sus temporadas y episodios";
+
+/********** Detail **********/
+
+"filter_all" = "Todos";
+
+"filter_alive" = "Vivos";
+
+"filter_death" = "Muertos";
+
+"filter_unknown" = "N/S";

@@ -23,4 +23,11 @@ extension String {
     static let generic_accept = NSLocalizedString("generic_accept")
     static let generic_cancel = NSLocalizedString("generic_cancel")
     static let generic_and = NSLocalizedString("generic_and")
+    
+    //Detail Screen
+    static let filter_all = NSLocalizedString("filter_all")
+    static let filter_death = NSLocalizedString("filter_death")
+    static let filter_alive = NSLocalizedString("filter_alive")
+    static let filter_unknown = NSLocalizedString("filter_unknown")
+    
 }

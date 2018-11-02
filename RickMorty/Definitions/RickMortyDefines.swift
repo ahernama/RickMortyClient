@@ -19,6 +19,10 @@ class RickMortyDefines: NSObject {
         }
         struct Characters{
             static let getCharacters = "/api/character/"
+            
+            static let alive = "Alive"
+            static let death = "Dead"
+            static let unknown = "unknown"
         }
     }
     

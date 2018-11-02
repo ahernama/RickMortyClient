@@ -12,7 +12,7 @@ import MaterialComponents.MaterialFlexibleHeader
 class CharactersViewController: RickMortyViewController {
     
     var headerViewController: MDCFlexibleHeaderViewController!
-    fileprivate var headerContentView:EpisodesHeaderView!
+    fileprivate var headerContentView:CharactersHeaderView!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -33,28 +33,6 @@ class CharactersViewController: RickMortyViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.charactersPresenter.viewWillAppear()
-    }
-    
-    // Flexible headerview configuration.
-    func configueHeaderView() {
-        self.loadHeaderView()
-        
-        let headerView = headerViewController.headerView
-        headerView.trackingScrollView = self.tableView
-        headerView.maximumHeight = RickMortyDefines.Metrics.CharacterList.headerMax
-        headerView.minimumHeight = RickMortyDefines.Metrics.CharacterList.headerMin
-        headerView.minMaxHeightIncludesSafeArea = false
-        headerView.backgroundColor = UIColor.white
-        headerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        headerContentView.frame = (headerView.bounds)
-        headerContentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        headerView.addSubview(headerContentView)
-    }
-    
-    func loadHeaderView() {
-        if let views = Bundle.main.loadNibNamed("EpisodesHeaderView", owner: self, options: nil) as? [EpisodesHeaderView], views.count > 0, let currentView = views.first{
-            self.headerContentView = currentView
-        }
     }
 }
 
@@ -87,10 +65,42 @@ extension CharactersViewController : UITableViewDelegate, UITableViewDataSource 
 }
 
 extension CharactersViewController : CharactersPresenterDelegate {
+    
+    // Flexible headerview configuration.
+    func configureHeaderView() {
+        self.loadHeaderView()
+        
+        let headerView = headerViewController.headerView
+        headerView.trackingScrollView = self.tableView
+        headerView.maximumHeight = RickMortyDefines.Metrics.CharacterList.headerMax
+        headerView.minimumHeight = RickMortyDefines.Metrics.CharacterList.headerMin
+        headerView.minMaxHeightIncludesSafeArea = false
+        headerView.backgroundColor = UIColor.white
+        headerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        headerContentView.frame = (headerView.bounds)
+        headerContentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        headerView.addSubview(headerContentView)
+    }
+    
+    func loadHeaderView() {
+        if let views = Bundle.main.loadNibNamed("CharactersHeaderView", owner: self, options: nil) as? [CharactersHeaderView], views.count > 0, let currentView = views.first{
+            self.headerContentView = currentView
+            self.headerContentView.delegate = self
+        }
+    }
+    
     func configureTableView() {
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = RickMortyDefines.CollectionViews.CharactersList.heightCharacters
         self.tableView.register(UINib(nibName: "CharactersTableViewCell", bundle: nil), forCellReuseIdentifier: "charactersTableViewCell")
+    }
+    
+    func configureHeaderWithEpisode(episode:RMEpisode){
+        self.headerContentView.configureWithEpisode(episode: episode)
+    }
+    
+    func configureHeaderWithFilters(filters:[String]){
+        self.headerContentView.configureWithStatus(status: filters)
     }
     
     func sizeHeaderView() {
@@ -116,5 +126,15 @@ extension CharactersViewController : CharactersPresenterDelegate {
     
     func loadCharacters() {
         self.tableView.reloadData()
+    }
+}
+
+extension CharactersViewController : CharactersHeaderViewDelegate {
+    func backAction() {
+        self.charactersPresenter.backAction()
+    }
+    
+    func filterSelection(filter:String){
+        self.charactersPresenter.filterByStatus(currentStatus: filter)
     }
 }

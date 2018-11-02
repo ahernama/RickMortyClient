@@ -15,8 +15,6 @@ class CharactersFlexibleHeaderContainerViewController: MDCFlexibleHeaderContaine
         let charactersViewController:CharactersViewController = CharactersViewController.instantiate(episode:episode)
         super.init(contentViewController: charactersViewController)
         charactersViewController.headerViewController = self.headerViewController
-        charactersViewController.view.frame = CGRect(x: charactersViewController.view.frame.origin.x, y: charactersViewController.view.frame.origin.y, width: charactersViewController.view.frame.size.width, height: charactersViewController.view.frame.size.height)
-        charactersViewController.configueHeaderView()
     }
 
     override func viewDidLoad() {

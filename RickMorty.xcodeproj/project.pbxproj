@@ -30,6 +30,14 @@
 		AB505053218B30C100629352 /* RMCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB505052218B30C100629352 /* RMCharacter.swift */; };
 		AB505056218B483C00629352 /* CharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB505054218B483C00629352 /* CharactersTableViewCell.swift */; };
 		AB505057218B483C00629352 /* CharactersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB505055218B483C00629352 /* CharactersTableViewCell.xib */; };
+		AB505059218B7F8400629352 /* CharactersHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB505058218B7F8400629352 /* CharactersHeaderView.swift */; };
+		AB50505B218B7F9B00629352 /* CharactersHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB50505A218B7F9B00629352 /* CharactersHeaderView.xib */; };
+		AB50505F218B813000629352 /* rick_morty_appbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB50505D218B813000629352 /* rick_morty_appbar@2x.png */; };
+		AB505060218B813000629352 /* rick_morty_appbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB50505E218B813000629352 /* rick_morty_appbar@3x.png */; };
+		AB505063218BCBA300629352 /* arrow_down_black@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB505061218BCBA000629352 /* arrow_down_black@3x.png */; };
+		AB505064218BCBA300629352 /* arrow_down_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB505062218BCBA100629352 /* arrow_down_black@2x.png */; };
+		AB505067218BCFC600629352 /* arrow_down_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB505065218BCFC600629352 /* arrow_down_white@3x.png */; };
+		AB505068218BCFC600629352 /* arrow_down_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB505066218BCFC600629352 /* arrow_down_white@2x.png */; };
 		AB8743CB21885B1500F9EED8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8743C321885B1500F9EED8 /* AppDelegate.swift */; };
 		AB8743CC21885B1500F9EED8 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8743C521885B1500F9EED8 /* Reach.swift */; };
 		AB8743CD21885B1500F9EED8 /* RouterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8743C621885B1500F9EED8 /* RouterManager.swift */; };
@@ -151,6 +159,14 @@
 		AB505052218B30C100629352 /* RMCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacter.swift; sourceTree = "<group>"; };
 		AB505054218B483C00629352 /* CharactersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewCell.swift; sourceTree = "<group>"; };
 		AB505055218B483C00629352 /* CharactersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersTableViewCell.xib; sourceTree = "<group>"; };
+		AB505058218B7F8400629352 /* CharactersHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersHeaderView.swift; sourceTree = "<group>"; };
+		AB50505A218B7F9B00629352 /* CharactersHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersHeaderView.xib; sourceTree = "<group>"; };
+		AB50505D218B813000629352 /* rick_morty_appbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rick_morty_appbar@2x.png"; sourceTree = "<group>"; };
+		AB50505E218B813000629352 /* rick_morty_appbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rick_morty_appbar@3x.png"; sourceTree = "<group>"; };
+		AB505061218BCBA000629352 /* arrow_down_black@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down_black@3x.png"; sourceTree = "<group>"; };
+		AB505062218BCBA100629352 /* arrow_down_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down_black@2x.png"; sourceTree = "<group>"; };
+		AB505065218BCFC600629352 /* arrow_down_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down_white@3x.png"; sourceTree = "<group>"; };
+		AB505066218BCFC600629352 /* arrow_down_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down_white@2x.png"; sourceTree = "<group>"; };
 		AB8743C321885B1500F9EED8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB8743C521885B1500F9EED8 /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
 		AB8743C621885B1500F9EED8 /* RouterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterManager.swift; sourceTree = "<group>"; };
@@ -409,6 +425,8 @@
 			children = (
 				AB505054218B483C00629352 /* CharactersTableViewCell.swift */,
 				AB505055218B483C00629352 /* CharactersTableViewCell.xib */,
+				AB505058218B7F8400629352 /* CharactersHeaderView.swift */,
+				AB50505A218B7F9B00629352 /* CharactersHeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -419,6 +437,19 @@
 				AB505050218A3DE200629352 /* CharactersPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		AB50505C218B813000629352 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				AB505066218BCFC600629352 /* arrow_down_white@2x.png */,
+				AB505065218BCFC600629352 /* arrow_down_white@3x.png */,
+				AB505062218BCBA100629352 /* arrow_down_black@2x.png */,
+				AB505061218BCBA000629352 /* arrow_down_black@3x.png */,
+				AB50505D218B813000629352 /* rick_morty_appbar@2x.png */,
+				AB50505E218B813000629352 /* rick_morty_appbar@3x.png */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		AB8743C121885B1500F9EED8 /* Classes */ = {
@@ -817,6 +848,7 @@
 		AB87442421886D7700F9EED8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AB50505C218B813000629352 /* Detail */,
 				AB505031218A1BA000629352 /* Episodes */,
 				AB87446F218876C500F9EED8 /* Splash */,
 				AB874437218876BF00F9EED8 /* Icon */,
@@ -1045,6 +1077,7 @@
 				AB87445E218876BF00F9EED8 /* Icon-App-83.5x83.5@2x.png in Resources */,
 				AB874464218876BF00F9EED8 /* Icon-App-40x40@2x.png in Resources */,
 				AB87446A218876BF00F9EED8 /* Icon-App-76x76@1x.png in Resources */,
+				AB505063218BCBA300629352 /* arrow_down_black@3x.png in Resources */,
 				AB505057218B483C00629352 /* CharactersTableViewCell.xib in Resources */,
 				AB87442C21886D7700F9EED8 /* user@3x.png in Resources */,
 				AB874458218876BF00F9EED8 /* Icon-App-60x60@1x.png in Resources */,
@@ -1052,6 +1085,7 @@
 				AB874456218876BF00F9EED8 /* Icon-App-76x76@2x.png in Resources */,
 				AB874468218876BF00F9EED8 /* Icon-App-60x60@2x.png in Resources */,
 				AB874457218876BF00F9EED8 /* Icon-App-29x29@1x.png in Resources */,
+				AB50505B218B7F9B00629352 /* CharactersHeaderView.xib in Resources */,
 				AB87442B21886D7700F9EED8 /* computer@2x.png in Resources */,
 				AB874461218876BF00F9EED8 /* Contents.json in Resources */,
 				AB87440021885E4F00F9EED8 /* Mainstructure.storyboard in Resources */,
@@ -1067,6 +1101,7 @@
 				AB874459218876BF00F9EED8 /* Icon-Small-50x50@2x.png in Resources */,
 				AB874469218876BF00F9EED8 /* Icon-App-57x57@2x.png in Resources */,
 				AB87445D218876BF00F9EED8 /* Icon-App-20x20@1x.png in Resources */,
+				AB505060218B813000629352 /* rick_morty_appbar@3x.png in Resources */,
 				AB87445F218876BF00F9EED8 /* Icon-App-20x20@3x.png in Resources */,
 				AB874467218876BF00F9EED8 /* Icon-Small-50x50@1x.png in Resources */,
 				AB874421218867AF00F9EED8 /* Localizable.strings in Resources */,
@@ -1075,15 +1110,19 @@
 				AB505039218A20A400629352 /* logo_list@2x.png in Resources */,
 				AB505034218A1BA100629352 /* rick_and_morty@3x.png in Resources */,
 				AB50504B218A30F700629352 /* Characters.storyboard in Resources */,
+				AB505068218BCFC600629352 /* arrow_down_white@2x.png in Resources */,
 				AB8744102188626300F9EED8 /* Info.storyboard in Resources */,
 				AB0649DB2187BCB000B05A29 /* Assets.xcassets in Resources */,
 				AB8744952189261700F9EED8 /* EpisodeCollectionViewCell.xib in Resources */,
 				AB87442D21886D7700F9EED8 /* user@2x.png in Resources */,
 				AB874465218876BF00F9EED8 /* Icon-App-72x72@2x.png in Resources */,
+				AB505064218BCBA300629352 /* arrow_down_black@2x.png in Resources */,
 				AB87446C218876BF00F9EED8 /* Icon-App-29x29@2x.png in Resources */,
 				AB87445A218876BF00F9EED8 /* Icon-App-40x40@1x.png in Resources */,
+				AB50505F218B813000629352 /* rick_morty_appbar@2x.png in Resources */,
 				AB874432218872B300F9EED8 /* Splash.storyboard in Resources */,
 				AB87445B218876BF00F9EED8 /* Icon-App-76x76@3x.png in Resources */,
+				AB505067218BCFC600629352 /* arrow_down_white@3x.png in Resources */,
 				AB505035218A1BA100629352 /* rick_and_morty@2x.png in Resources */,
 				AB87446E218876BF00F9EED8 /* iTunesArtwork@3x.png in Resources */,
 				AB505030218A0B6800629352 /* LoadingCollectionViewCell.xib in Resources */,
@@ -1212,6 +1251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB505056218B483C00629352 /* CharactersTableViewCell.swift in Sources */,
+				AB505059218B7F8400629352 /* CharactersHeaderView.swift in Sources */,
 				AB8743CB21885B1500F9EED8 /* AppDelegate.swift in Sources */,
 				AB87448F2188FE1200F9EED8 /* EpisodesDataBaseProvider.swift in Sources */,
 				AB8743CC21885B1500F9EED8 /* Reach.swift in Sources */,

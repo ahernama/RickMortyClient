@@ -10,6 +10,9 @@ import UIKit
 
 protocol CharactersPresenterDelegate: NSObjectProtocol {
     func configureTableView()
+    func configureHeaderView()
+    func configureHeaderWithEpisode(episode:RMEpisode)
+    func configureHeaderWithFilters(filters:[String])
     
     func sizeHeaderView()
     
@@ -35,6 +38,7 @@ class CharactersPresenter: NSObject {
     
     //Life cycle methods
     func viewDidLoad(){
+        self.delegate?.configureHeaderView()
         self.delegate?.configureTableView()
         
         self.delegate?.showLoadingIndicator()
@@ -43,6 +47,7 @@ class CharactersPresenter: NSObject {
     
     func viewWillAppear(){
         self.delegate?.sizeHeaderView()
+        self.delegate?.configureHeaderWithEpisode(episode: self.episode)
     }
     
     //collection view pagging methods
@@ -64,7 +69,7 @@ class CharactersPresenter: NSObject {
     
     //Request information methods
     func requestCharacters(){
-        charactersManager.getCharactersList(currentIds: getrCharactersIdByEpisode(episode: self.episode)) { (characters, error) in
+        charactersManager.getCharactersList(currentIds: getCharactersIdByEpisode(episode: self.episode)) { (characters, error) in
             self.delegate?.hideLoadingIndicator()
             
             guard let currentCharacters = characters, currentCharacters.isEmpty == false, error == nil else{
@@ -72,12 +77,14 @@ class CharactersPresenter: NSObject {
                 return
             }
             self.characters = currentCharacters
+            self.delegate?.configureHeaderWithFilters(filters: self.getStatusByCharacters(characters: self.characters))
+            
             self.filterCharacters = self.characters
             self.delegate?.loadCharacters()
         }
     }
     
-    func getrCharactersIdByEpisode(episode:RMEpisode)->[Int]{
+    func getCharactersIdByEpisode(episode:RMEpisode)->[Int]{
         var currentIds:[Int] = []
         for character in episode.characters {
             if let idCharacter = Int(character.replacingOccurrences(of: RickMortyDefines.ContentServices.baseUrl+RickMortyDefines.ContentServices.Characters.getCharacters, with: "")) {
@@ -85,5 +92,44 @@ class CharactersPresenter: NSObject {
             }
         }
         return currentIds
+    }
+    
+    //Filter methods
+    
+    func filterByStatus(currentStatus:String){
+        if currentStatus == String.filter_all {
+            self.filterCharacters = self.characters
+        }else{
+            self.filterCharacters = self.characters.filter { $0.status == currentStatus }
+        }
+        self.delegate?.loadCharacters()
+    }
+    
+    func getStatusByCharacters(characters:[RMCharacter]) -> [String] {
+        var status:[String] = []
+        status.append(String.filter_all)
+        if characters.count > 1 {
+            for currentCharacter in characters {
+                if status.contains(currentCharacter.status) == false {
+                    status.append(currentCharacter.status)
+                }
+            }
+        }
+        return status
+    }
+    
+    //Route methods
+    func backAction(){
+        self.transitionToBack()
+    }
+}
+
+//
+// MARK: - Transition Methods
+//
+
+extension CharactersPresenter{
+    func transitionToBack(){
+        RouterManager.shared.visibleViewController?.dismiss(animated: true, completion: nil)
     }
 }
